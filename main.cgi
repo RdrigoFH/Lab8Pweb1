@@ -37,7 +37,7 @@ print <<END_HTML;
 <body>
 
   <h2>Resultado:</h2>
-  <p>$numero1 + $numero2 = $resultado</p>
+  <p>$numero1 $operacion $numero2 = $resultado</p>
 
 </body>
 </html>
