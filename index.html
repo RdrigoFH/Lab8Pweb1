@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
   <title>Calculadora</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <div class="calculator">
-    <input type="number" id="numero" placeholder="Ingrese un número">
-    <span class="operator">+</span>
-    <button onclick="calcular()">Calcular</button>
-    <div id="resultado"></div>
-  </div>
+  <form action="calcular.pl" method="post">
+    <input type="text" name="numero1" placeholder="Ingrese un número" required>
+    <span class="operador">+</span>
+    <input type="text" name="numero2" placeholder="Ingrese otro número" required>
+    <input type="submit" value="Calcular">
+  </form>
 
 </body>
 </html>
