@@ -10,7 +10,12 @@
 
   <form action="calcular.pl" method="post">
     <input type="text" name="numero1" placeholder="Ingrese un número" required>
-    <span class="operador">+</span>
+    <select name="operacion" required>
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
     <input type="text" name="numero2" placeholder="Ingrese otro número" required>
     <input type="submit" value="Calcular">
   </form>
