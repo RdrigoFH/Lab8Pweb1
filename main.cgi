@@ -3,17 +3,27 @@ use strict;
 use warnings;
 use CGI;
 
-# Crea una nueva instancia CGI
 my $cgi = new CGI;
 
-# Obtiene los valores ingresados en el formulario
 my $numero1 = $cgi->param('numero1');
 my $numero2 = $cgi->param('numero2');
 
-# Realiza la operación de suma
-my $resultado = $numero1 + $numero2;
-
-# Imprime el encabezado HTTP y la respuesta
+my $resultado;
+if ($operacion eq '+') {
+    $resultado = $numero1 + $numero2;
+} elsif ($operacion eq '-') {
+    $resultado = $numero1 - $numero2;
+} elsif ($operacion eq '*') {
+    $resultado = $numero1 * $numero2;
+} elsif ($operacion eq '/') {
+    if ($numero2 != 0) {
+        $resultado = $numero1 / $numero2;
+    } else {
+        $resultado = "Error: No puedes divider entre 0";
+    }
+} else {
+    $resultado = "Error: Operacion no válida";
+}
 print $cgi->header('text/html');
 print <<END_HTML;
 <!DOCTYPE html>
